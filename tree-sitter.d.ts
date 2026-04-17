@@ -212,139 +212,139 @@ declare module "tree-sitter" {
        * If a new tree is created based on an older tree and reuses
        * a node, that node will have the same id in both trees.
        */
-      readonly id: number;
+      get id(): number;
 
       /**
        * This node's type as a numeric id
        */
-      readonly typeId: number;
+      get typeId(): number;
 
       /**
        * This node's type as a numeric id as it appears in the grammar,
        * ignoring aliases
        */
-      readonly grammarId: number;
+      get grammarId(): number;
 
       /**
        * This node's type as a string
        */
-      readonly type: string;
+      get type(): string;
 
       /**
         * This node's symbol name as it appears in the grammar,
         * ignoring aliases
         */
-      readonly grammarType: string;
+      get grammarType(): string;
 
       /**
        * Whether this node is named.
        * Named nodes correspond to named rules in the grammar,
        * whereas anonymous nodes correspond to string literals in the grammar.
        */
-      readonly isNamed: boolean;
+      get isNamed(): boolean;
 
       /**
        * Whether this node is missing.
        * Missing nodes are inserted by the parser in order to
        * recover from certain kinds of syntax errors.
        */
-      readonly isMissing: boolean;
+      get isMissing(): boolean;
 
       /**
         * Whether this node is extra.
         * Extra nodes represent things like comments, which are not
         * required by the grammar but can appear anywhere.
         */
-      readonly isExtra: boolean;
+      get isExtra(): boolean;
 
       /**
        * Whether this node has been edited
        */
-      readonly hasChanges: boolean;
+      get hasChanges(): boolean;
 
       /**
        * Whether this node represents a syntax error or contains
        * any syntax errors within it
        */
-      readonly hasError: boolean;
+      get hasError(): boolean;
 
       /**
        * Whether this node represents a syntax error.
        * Syntax errors represent parts of the code that could not
        * be incorporated into a valid syntax tree.
        */
-      readonly isError: boolean;
+      get isError(): boolean;
 
       /** The text content for this node from the source code */
-      readonly text: string;
+      get text(): string;
 
       /** The parse state of this node */
-      readonly parseState: number;
+      get parseState(): number;
 
       /** The parse state that follows this node */
-      readonly nextParseState: number;
+      get nextParseState(): number;
 
       /** The position where this node starts in terms of rows and columns */
-      readonly startPosition: Point;
+      get startPosition(): Point;
 
       /** The position where this node ends in terms of rows and columns */
-      readonly endPosition: Point;
+      get endPosition(): Point;
 
       /** The byte offset where this node starts */
-      readonly startIndex: number;
+      get startIndex(): number;
 
       /** The byte offset where this node ends */
-      readonly endIndex: number;
+      get endIndex(): number;
 
       /**
        * This node's immediate parent.
        * For iterating over ancestors, prefer using {@link childWithDescendant}
        */
-      readonly parent: SyntaxNode | null;
+      get parent(): SyntaxNode | null;
 
       /** Array of all child nodes */
-      readonly children: Array<SyntaxNode>;
+      get children(): Array<SyntaxNode>;
 
       /** Array of all named child nodes */
-      readonly namedChildren: Array<SyntaxNode>;
+      get namedChildren(): Array<SyntaxNode>;
 
       /** The number of children this node has */
-      readonly childCount: number;
+      get childCount(): number;
 
       /**
        * The number of named children this node has.
        * @see {@link isNamed}
        */
-      readonly namedChildCount: number;
+      get namedChildCount(): number;
 
       /** The first child of this node */
-      readonly firstChild: SyntaxNode | null;
+      get firstChild(): SyntaxNode | null;
 
       /** The first named child of this node */
-      readonly firstNamedChild: SyntaxNode | null;
+      get firstNamedChild(): SyntaxNode | null;
 
       /** The last child of this node */
-      readonly lastChild: SyntaxNode | null;
+      get lastChild(): SyntaxNode | null;
 
       /** The last child of this node */
-      readonly lastNamedChild: SyntaxNode | null;
+      get lastNamedChild(): SyntaxNode | null;
 
       /** This node's next sibling */
-      readonly nextSibling: SyntaxNode | null;
+      get nextSibling(): SyntaxNode | null;
 
       /** This node's next named sibling */
-      readonly nextNamedSibling: SyntaxNode | null;
+      get nextNamedSibling(): SyntaxNode | null;
 
       /** This node's previous sibling */
-      readonly previousSibling: SyntaxNode | null;
+      get previousSibling(): SyntaxNode | null;
 
       /** This node's previous named sibling */
-      readonly previousNamedSibling: SyntaxNode | null;
+      get previousNamedSibling(): SyntaxNode | null;
 
       /**
        * The number of descendants this node has, including itself
        */
-      readonly descendantCount: number;
+      get descendantCount(): number;
 
       /**
        * The names of extra fields available in the subclass, if any.
